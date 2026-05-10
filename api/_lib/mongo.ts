@@ -5,12 +5,12 @@
  */
 import { MongoClient, Db, Collection, Document } from 'mongodb';
 
-const MONGO_URI = "mongodb+srv://radiant:radiant@electoral.qgwtgva.mongodb.net/?appName=Electoral";
-const DB_NAME ='elections';
-const COLLECTION = 'voters_ac34';
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://radiant:radiant@electoral.qgwtgva.mongodb.net/?appName=Electoral";
+const DB_NAME = process.env.DB_NAME || 'elections';
+const COLLECTION = process.env.MONGO_COLLECTION || 'voters_ac34';
 
 if (!MONGO_URI) {
-  throw new Error('MONGO_URI environment variable is not set');
+  throw new Error('MONGO_URI is missing. Please set it in Vercel Settings -> Environment Variables.');
 }
 
 let cachedClient: MongoClient | null = null;

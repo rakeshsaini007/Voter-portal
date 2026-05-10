@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getVoters, setCors } from './_lib/mongo';
+import { getVoters, setCors } from './_lib/mongo.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCors(res);

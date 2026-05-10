@@ -1,0 +1,6 @@
+{
+  "name": "Voter Information Portal",
+  "description": "Secure elector information management system with MongoDB backend.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
