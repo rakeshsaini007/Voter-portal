@@ -435,7 +435,15 @@ export default function App() {
                         <h3 className="font-black text-white text-lg group-hover:text-indigo-300 transition-colors uppercase tracking-tight leading-tight">
                           {voter.ElectorsName}
                         </h3>
-                        <p className="text-sm font-medium text-white/40 mb-3">{voter.ElectorNameHindi}</p>
+                        {voter.RelativeName && (
+                          <div className="text-xs font-semibold text-indigo-400/90 mt-1 uppercase tracking-wide">
+                            {voter.Relativetype ? `${voter.Relativetype}: ` : 'Relative: '}{voter.RelativeName}
+                          </div>
+                        )}
+                        <p className="text-sm font-medium text-white/40 mt-1 mb-3">
+                          {voter.ElectorNameHindi}
+                          {voter.RelativeNameHindi && ` (${voter.RelativeNameHindi})`}
+                        </p>
                         <div className="flex items-center gap-3 text-[10px] font-bold text-white/30">
                           <span>{voter.ElectorGender}</span>
                           <span>·</span>
